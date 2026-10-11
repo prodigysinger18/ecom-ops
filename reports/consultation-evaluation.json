@@ -1,0 +1,116 @@
+{
+  "scope": "synthetic offline smoke cases; no provider or business tool calls",
+  "sensitive_positive_count": 15,
+  "sensitive_detected": 15,
+  "sensitive_recall": 1.0,
+  "normal_count": 10,
+  "false_positive_count": 0,
+  "false_positive_rate": 0.0,
+  "route_count": 20,
+  "route_correct": 20,
+  "route_accuracy": 1.0,
+  "route_cases": [
+    {
+      "question": "退货条件",
+      "expected": "faq_rag",
+      "actual": "faq_rag"
+    },
+    {
+      "question": "配送运费",
+      "expected": "faq_rag",
+      "actual": "faq_rag"
+    },
+    {
+      "question": "客服工作时间",
+      "expected": "faq_rag",
+      "actual": "faq_rag"
+    },
+    {
+      "question": "耳机配对",
+      "expected": "faq_rag",
+      "actual": "faq_rag"
+    },
+    {
+      "question": "商品使用方法",
+      "expected": "faq_rag",
+      "actual": "faq_rag"
+    },
+    {
+      "question": "商品库存",
+      "expected": "business_tool",
+      "actual": "business_tool"
+    },
+    {
+      "question": "查询商品",
+      "expected": "business_tool",
+      "actual": "business_tool"
+    },
+    {
+      "question": "商品多少钱",
+      "expected": "business_tool",
+      "actual": "business_tool"
+    },
+    {
+      "question": "查订单",
+      "expected": "business_tool",
+      "actual": "business_tool"
+    },
+    {
+      "question": "我的订单",
+      "expected": "business_tool",
+      "actual": "business_tool"
+    },
+    {
+      "question": "查询物流",
+      "expected": "business_tool",
+      "actual": "business_tool"
+    },
+    {
+      "question": "查快递",
+      "expected": "business_tool",
+      "actual": "business_tool"
+    },
+    {
+      "question": "取消订单",
+      "expected": "order_modify",
+      "actual": "order_modify"
+    },
+    {
+      "question": "修改订单",
+      "expected": "order_modify",
+      "actual": "order_modify"
+    },
+    {
+      "question": "改地址",
+      "expected": "order_modify",
+      "actual": "order_modify"
+    },
+    {
+      "question": "修改收货地址",
+      "expected": "order_modify",
+      "actual": "order_modify"
+    },
+    {
+      "question": "修改金额",
+      "expected": "order_modify",
+      "actual": "order_modify"
+    },
+    {
+      "question": "今天天气怎么样",
+      "expected": "fallback",
+      "actual": "fallback"
+    },
+    {
+      "question": "写一首诗",
+      "expected": "fallback",
+      "actual": "fallback"
+    },
+    {
+      "question": "股票怎么选",
+      "expected": "fallback",
+      "actual": "fallback"
+    }
+  ],
+  "production_latency_p95": null,
+  "cost_per_request": null
+}

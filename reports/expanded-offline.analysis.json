@@ -1,0 +1,73 @@
+{
+  "run_id": "56a99a72-fb86-4019-ab00-071c3bc6f3a8",
+  "comparison": {
+    "vector": {
+      "summary": {
+        "cases": 60,
+        "document_precision_at_5": 0.2366666666666667,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 0.8777777777777778,
+        "p95_pipeline_ms": 64.905,
+        "status_counts": {
+          "extractive": 60
+        },
+        "rerank_fallback_count": 0,
+        "reported_generation_tokens": 0,
+        "reported_enhancement_tokens": 0,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.0,
+        "p95_pipeline_ms": 0.0,
+        "reported_generation_tokens": 0,
+        "reported_enhancement_tokens": 0
+      },
+      "reported_chat_cost_estimate": null
+    },
+    "hybrid": {
+      "summary": {
+        "cases": 60,
+        "document_precision_at_5": 0.2366666666666667,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 0.9111111111111111,
+        "p95_pipeline_ms": 71.849,
+        "status_counts": {
+          "extractive": 60
+        },
+        "rerank_fallback_count": 0,
+        "reported_generation_tokens": 0,
+        "reported_enhancement_tokens": 0,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.033333333333333326,
+        "p95_pipeline_ms": 6.944000000000003,
+        "reported_generation_tokens": 0,
+        "reported_enhancement_tokens": 0
+      },
+      "reported_chat_cost_estimate": null
+    },
+    "hybrid_rerank": {
+      "status": "not_run"
+    },
+    "hybrid_rerank_evidence": {
+      "status": "not_run"
+    }
+  },
+  "cost_scope": "reported chat usage only; excludes embeddings, indexing, failed calls with missing usage, infrastructure; not an invoice",
+  "input_price_per_million": null,
+  "output_price_per_million": null,
+  "failure_cases": []
+}

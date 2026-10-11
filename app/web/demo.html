@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>电商客服 · 咨询演示</title>
+<style>
+:root{font-family:system-ui,"Microsoft YaHei",sans-serif;color:#20324a;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}main{max-width:1100px;margin:38px auto;padding:0 22px}h1{font-size:28px;margin:8px 0}.sub{color:#60738a;line-height:1.7}.grid{display:grid;grid-template-columns:1.05fr 1fr;gap:20px}.card{padding:26px;background:white;border:1px solid #e1e7ef;border-radius:18px;box-shadow:0 6px 22px #24395308}label{display:block;font-size:14px;font-weight:600;margin:16px 0 7px}input,select,textarea{width:100%;border:1px solid #cfd9e5;border-radius:9px;padding:11px;font:inherit;background:#fff}textarea{resize:vertical;min-height:125px}button{cursor:pointer;border:0;border-radius:9px;padding:11px 15px;font:inherit}.primary{background:#245ac7;color:white;width:100%;margin-top:18px}.primary:disabled{background:#8298be;cursor:wait}.samples{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.samples button{background:#edf3ff;color:#254e91;font-size:13px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.answer{white-space:pre-wrap;line-height:1.8;min-height:170px;background:#f8faff;padding:20px;border-radius:12px;margin:18px 0}.status{color:#687c96;font-size:14px}.tag{display:inline-block;padding:5px 10px;margin:0 6px 6px 0;border-radius:20px;background:#e9f2ef;color:#247352;font-size:13px}.error{color:#b32234}details{margin-top:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#f5f7fb;padding:14px;border-radius:8px}a{color:#245ac7}.footer{font-size:13px;color:#75869a;margin:24px 0}ul{padding-left:20px;line-height:1.8}@media(max-width:760px){.grid{grid-template-columns:1fr}main{margin:20px auto}.card{padding:20px}}
+.preview{border:1px solid #cfdcf0;border-radius:12px;padding:16px;margin:12px 0;background:#f8fbff}.preview h3{margin:0 0 10px}.preview p{color:#60738a;font-size:14px}.preview dl{display:grid;grid-template-columns:90px 1fr;gap:8px}.preview dd{margin:0;overflow-wrap:anywhere}dialog{border:1px solid #cfdcf0;border-radius:16px;max-width:550px;width:90%;padding:24px}dialog::backdrop{background:#20324a66}</style></head><body><main>
+<p class="status">E-COM OPS / 客服辅助演示</p><h1>让每次咨询都有依据</h1><p class="sub">尝试商品、订单和售后咨询，查看回复、引用与处理路径。当前业务数据为模拟数据，建议回复需人工审核后发送。</p>
+<div class="grid"><section class="card"><h2>发起咨询</h2>
+<label for="mode">使用身份</label><select id="mode"><option value="staff">内部客服</option><option value="customer">已认证用户</option></select>
+<label for="token">访问令牌</label><input id="token" type="password" autocomplete="off" placeholder="输入客服令牌或用户令牌，仅保留在当前页面">
+<div id="staffFields"><label for="user">咨询用户编号</label><input id="user" value="user-001"></div>
+<div class="row"><div><label for="order">订单号（按需填写）</label><input id="order" placeholder="查询订单时填写"></div><div><label for="product">商品编号（按需填写）</label><input id="product" type="number" min="1" placeholder="如 1001"></div></div>
+<label for="question">用户问题</label><textarea id="question" placeholder="例如：耳机还有现货吗？"></textarea>
+<div class="samples"><button data-sample="faq">售后政策</button><button data-sample="product">商品库存</button><button data-sample="order">订单查询</button><button data-sample="denied">越权拦截</button><button data-sample="outside">范围提示</button><button data-sample="human">主动转人工</button></div>
+<button id="send" class="primary">生成建议回复</button><button id="reset" style="margin-top:10px;width:100%;background:#eef1f6">开始新会话</button><p id="progress" class="status" role="status" aria-live="polite">尚未提交咨询</p>
+</section><section class="card"><h2>建议回复</h2><div id="badges"></div><div id="answer" class="answer">提交问题后，这里会显示可供审核的回复。</div><div id="previews"></div><h3>依据与业务查询</h3><ul id="sources"><li>暂无引用或工具调用</li></ul><details><summary>查看处理记录</summary><pre id="trace">暂无记录</pre></details></section></div>
+<p class="footer">访问令牌不会写入浏览器存储。页面不会登录闲鱼或自动向买家发送消息。<a href="/review">人工评测审核</a> · <a href="/docs">接口说明</a></p>
+</main><dialog id="detail"><h2>业务详情</h2><div id="detailBody"></div><button id="closeDetail">关闭</button></dialog><script>
+const $=id=>document.getElementById(id); let cid=null;
+const samples={faq:['退货需要保留哪些东西？','',''],product:['示例蓝牙耳机还有现货吗？','','1001'],order:['我的订单发出来没有？','ECO202610090001',''],denied:['查询订单状态','ECO202610090001',''],outside:['明天会下雨吗？','',''],human:['请帮我转人工','','']};
+const routeNames={faq_rag:'知识库问答',business_tool:'业务查询',clarification:'需要补充信息',fallback:'范围提示',human_request:'用户申请人工',order_modify:'修改需人工审核',safety_block:'敏感内容拦截',service_failure:'服务异常',human:'人工接管'};
+function reset(){cid=null;$('previews').replaceChildren();$('detail').close();$('progress').textContent='已开始新会话';}
+$('mode').onchange=()=>{$('staffFields').hidden=$('mode').value==='customer';reset();};
+$('token').onchange=reset;$('user').onchange=reset;$('reset').onclick=reset;
+document.querySelectorAll('[data-sample]').forEach(b=>b.onclick=()=>{if(b.dataset.sample!=='human')reset();const q=samples[b.dataset.sample];$('question').value=q[0];$('order').value=q[1];$('product').value=q[2];if($('mode').value==='staff')$('user').value=b.dataset.sample==='denied'?'user-002':'user-001';});
+$('closeDetail').onclick=()=>$('detail').close();
+function renderPreview(card,parent,clickable=true){
+ const box=document.createElement('article');box.className='preview';
+ const title=document.createElement('h3');title.textContent=card.title;box.append(title);
+ const dl=document.createElement('dl');Object.entries(card.fields||{}).forEach(([k,v])=>{const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;dl.append(dt,dd);});box.append(dl);
+ const description=document.createElement('p');description.textContent=card.description;box.append(description);
+ // Only server-owned local preview routes can receive our Authorization header.
+ if(clickable&&/^\/api\/v1\/previews\/(products|orders)\/[^/?#]+$/.test(card.url||'')){
+  const link=document.createElement('a');link.href=card.url;link.textContent='查看最新详情与链接';
+  const mode=$('mode').value,user=$('user').value,token=$('token').value.trim();
+  link.onclick=async e=>{e.preventDefault();$('detailBody').replaceChildren();$('detail').showModal();
+   try{if(mode!==$('mode').value||user!==$('user').value||token!==$('token').value.trim())throw new Error('身份已变更，请重新查询');
+    const r=await fetch(card.url,{headers:{Authorization:'Bearer '+token},cache:'no-store'});const data=await r.json();if(!r.ok)throw new Error(data.detail||'详情查询失败');
+    renderPreview(data,$('detailBody'),false);const hint=document.createElement('p');hint.textContent='本地详情链接（单独访问需认证）：'+new URL(card.url,location.origin).href;$('detailBody').append(hint);
+   }catch(err){$('detailBody').textContent=err.message;}};box.append(link);
+ }
+ parent.append(box);
+}
+$('send').onclick=async()=>{
+ if(!$('token').value.trim()||!$('question').value.trim()){$('progress').textContent='请先填写访问令牌和问题';return;}
+ const mode=$('mode').value, token=$('token').value.trim(),user=$('user').value.trim();
+ const payload={message:$('question').value.trim()}; if(mode==='staff')payload.user_external_id=user;
+ if(cid)payload.conversation_id=cid;if($('order').value.trim())payload.order_no=$('order').value.trim();if($('product').value)payload.product_id=Number($('product').value);
+ $('previews').replaceChildren();$('detail').close();$('send').disabled=true;$('progress').textContent='正在处理，请稍候…';$('progress').className='status'; const start=performance.now();
+ try{const r=await fetch(mode==='staff'?'/api/v1/chat':'/api/v1/customer/chat',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify(payload)});const data=await r.json();if(!r.ok)throw new Error(typeof data.detail==='string'?data.detail:'请求未通过校验，请检查输入');
+ (data.previews||[]).forEach(card=>renderPreview(card,$('previews')));cid=data.conversation_id;$('answer').textContent=data.answer;$('badges').replaceChildren();
+ [routeNames[data.route]||data.route,data.handoff?'待人工处理':'会话可继续'].forEach(t=>{const s=document.createElement('span');s.className='tag';s.textContent=t;$('badges').append(s);});
+ $('sources').replaceChildren();const items=[...(data.sources||[]),...(data.tool_calls||[]).map(t=>'业务查询：'+t)];if(!items.length)items.push('本次没有引用或工具调用');items.forEach(t=>{const li=document.createElement('li');li.textContent=t;$('sources').append(li);});
+ $('trace').textContent=JSON.stringify(data,null,2);$('progress').textContent='处理完成 · '+Math.round(performance.now()-start)+' 毫秒 · 会话 '+cid;
+ }catch(e){$('progress').textContent=e.message;$('progress').className='status error';}finally{$('send').disabled=false;}
+};
+</script></body></html>

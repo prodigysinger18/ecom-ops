@@ -1,0 +1,6 @@
+{
+  "dataset": "data\\evaluation\\routing-validation.json",
+  "sha256": "0cfa0e19833045bf5eb6a944abfd213f286654702df80d8d7909247ded77227d",
+  "cases": 60,
+  "policy": "candidate synthetic labels; no changes after first run to inflate accuracy"
+}

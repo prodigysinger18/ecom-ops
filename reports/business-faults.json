@@ -1,0 +1,53 @@
+{
+  "scope": "offline fault injection, not real platform outage",
+  "scenarios": {
+    "timeout": {
+      "exit_code": 0,
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "artifact": "reports\\faults\\timeout.xml"
+    },
+    "missing_order": {
+      "exit_code": 0,
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "artifact": "reports\\faults\\missing_order.xml"
+    },
+    "unauthorized_order": {
+      "exit_code": 0,
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "artifact": "reports\\faults\\unauthorized_order.xml"
+    },
+    "duplicate_submit": {
+      "exit_code": 0,
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "artifact": "reports\\faults\\duplicate_submit.xml"
+    },
+    "policy_update_delete": {
+      "exit_code": 0,
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "artifact": "reports\\faults\\policy_update_delete.xml"
+    },
+    "human_takeover": {
+      "exit_code": 0,
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "artifact": "reports\\faults\\human_takeover.xml"
+    }
+  }
+}

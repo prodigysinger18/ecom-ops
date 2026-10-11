@@ -1,0 +1,557 @@
+{
+  "dataset": "synthetic-test",
+  "generation": "extractive",
+  "provider_cost": null,
+  "limitations": "合成独立测试题，仅检查路由、证据文档召回和原文引用；不代表人工标注答案准确率、语义质量、并发延迟或生产成本",
+  "results": {
+    "keyword": {
+      "cases": 14,
+      "route_correct_rate": 0.9285714285714286,
+      "evidence_recall_at_5": 1.0,
+      "p95_ms": 2.472,
+      "rows": [
+        {
+          "id": "test-1",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 2.472,
+          "citations": [
+            "shipping",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-2",
+          "category": "exception",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.096,
+          "citations": [
+            "shipping",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-3",
+          "category": "exception",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.45,
+          "citations": [
+            "returns",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-4",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.14,
+          "citations": [
+            "returns",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-5",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.128,
+          "citations": [
+            "headphones",
+            "headphones"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-6",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.106,
+          "citations": [
+            "support"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-7",
+          "category": "multi_evidence",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 2.197,
+          "citations": [
+            "shipping",
+            "returns",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-8",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.21,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-9",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.008,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-10",
+          "category": "tool",
+          "expected": "tool_required",
+          "actual": "tool_required",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.004,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-11",
+          "category": "tool",
+          "expected": "tool_required",
+          "actual": "tool_required",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.003,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-12",
+          "category": "injection",
+          "expected": "unsafe_instruction",
+          "actual": "unsafe_instruction",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.005,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-13",
+          "category": "expired",
+          "expected": "no_evidence",
+          "actual": "supported",
+          "route_correct": false,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.033,
+          "citations": [
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-14",
+          "category": "conflict",
+          "expected": "conflict",
+          "actual": "conflict",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.368,
+          "citations": [],
+          "literal_citation_valid": true
+        }
+      ]
+    },
+    "vector": {
+      "cases": 14,
+      "route_correct_rate": 1,
+      "evidence_recall_at_5": 1.0,
+      "p95_ms": 2.567,
+      "rows": [
+        {
+          "id": "test-1",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.376,
+          "citations": [
+            "shipping",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-2",
+          "category": "exception",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.328,
+          "citations": [
+            "shipping"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-3",
+          "category": "exception",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.353,
+          "citations": [
+            "returns",
+            "shipping"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-4",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.368,
+          "citations": [
+            "returns",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-5",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.553,
+          "citations": [
+            "headphones",
+            "headphones"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-6",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.528,
+          "citations": [
+            "support"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-7",
+          "category": "multi_evidence",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 2.567,
+          "citations": [
+            "shipping",
+            "returns",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-8",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.445,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-9",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.301,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-10",
+          "category": "tool",
+          "expected": "tool_required",
+          "actual": "tool_required",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.004,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-11",
+          "category": "tool",
+          "expected": "tool_required",
+          "actual": "tool_required",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.003,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-12",
+          "category": "injection",
+          "expected": "unsafe_instruction",
+          "actual": "unsafe_instruction",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.005,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-13",
+          "category": "expired",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.315,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-14",
+          "category": "conflict",
+          "expected": "conflict",
+          "actual": "conflict",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.424,
+          "citations": [],
+          "literal_citation_valid": true
+        }
+      ]
+    },
+    "hybrid": {
+      "cases": 14,
+      "route_correct_rate": 1,
+      "evidence_recall_at_5": 1.0,
+      "p95_ms": 2.725,
+      "rows": [
+        {
+          "id": "test-1",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.488,
+          "citations": [
+            "shipping",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-2",
+          "category": "exception",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.56,
+          "citations": [
+            "shipping"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-3",
+          "category": "exception",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.419,
+          "citations": [
+            "returns",
+            "shipping"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-4",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.492,
+          "citations": [
+            "returns",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-5",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.421,
+          "citations": [
+            "headphones",
+            "headphones"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-6",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.468,
+          "citations": [
+            "support"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-7",
+          "category": "multi_evidence",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 2.725,
+          "citations": [
+            "shipping",
+            "returns",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-8",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.289,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-9",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.292,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-10",
+          "category": "tool",
+          "expected": "tool_required",
+          "actual": "tool_required",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.004,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-11",
+          "category": "tool",
+          "expected": "tool_required",
+          "actual": "tool_required",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.003,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-12",
+          "category": "injection",
+          "expected": "unsafe_instruction",
+          "actual": "unsafe_instruction",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 0.005,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-13",
+          "category": "expired",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.561,
+          "citations": [],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "test-14",
+          "category": "conflict",
+          "expected": "conflict",
+          "actual": "conflict",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.369,
+          "citations": [],
+          "literal_citation_valid": true
+        }
+      ]
+    }
+  }
+}

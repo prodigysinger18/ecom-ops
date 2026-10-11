@@ -1,0 +1,1300 @@
+{
+  "scope": "synthetic unreviewed candidate labels, not production accuracy",
+  "development_before": {
+    "correct": 107,
+    "count": 120
+  },
+  "development_after": {
+    "dataset_sha256": "3b34b6dfae2b667d8f022f186bd520f34039f46aa6b3a40ec7e30f139c421234",
+    "count": 120,
+    "correct": 120,
+    "accuracy": 1.0,
+    "confusion": {
+      "faq_rag -> faq_rag": 60,
+      "fallback -> fallback": 10,
+      "business_tool -> business_tool": 20,
+      "order_modify -> order_modify": 10,
+      "safety_block -> safety_block": 10,
+      "human_request -> human_request": 10
+    },
+    "rows": [
+      {
+        "id": "holdout-shipping-01",
+        "question": "下单付款之后，普通商品最晚多久发出？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-02",
+        "question": "普通商品承诺的发货时效是多少小时？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-03",
+        "question": "预售商品也保证两天发货吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-04",
+        "question": "节假日发货安排与平时一样吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-05",
+        "question": "普通商品与预售商品的发货规则有区别吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-06",
+        "question": "预售的发货日期应该看哪里？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-07",
+        "question": "付款后48小时内发货的规则适用哪些商品？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-08",
+        "question": "节假日商品配送安排在哪里确认？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-09",
+        "question": "商品页写的预售时间和普通发货规则，应该按哪个？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-shipping-10",
+        "question": "普通商品的发货时效从付款还是签收算起？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-01",
+        "question": "申请退货要保留哪些东西？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-02",
+        "question": "商品包装扔掉了还能直接申请无理由退货吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-03",
+        "question": "定制商品属于无理由退货的适用范围吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-04",
+        "question": "退货的七天期限从签收开始算吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-05",
+        "question": "签收后第八天是否仍在普通退货期限内？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-06",
+        "question": "只有商品没有配件，能直接保证退货通过吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-07",
+        "question": "提交退货申请等于审核已经通过了吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-08",
+        "question": "普通退货期限与定制商品例外分别是什么？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-09",
+        "question": "判断某个订单能不能退货，需要核实哪些事实？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-returns-10",
+        "question": "退货政策是否保证所有商品都可以无理由退？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-01",
+        "question": "普通地区商品满99元是否包邮？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-02",
+        "question": "偏远地区也使用满99元包邮政策吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-03",
+        "question": "偏远地区配送费用看哪个页面？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-04",
+        "question": "非质量原因退货运费由哪一方承担？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-05",
+        "question": "质量问题退货运费是不是必须经过审核？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-06",
+        "question": "退货运费能不能一概要求商家承担？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-07",
+        "question": "普通地区包邮门槛与偏远配送的例外是什么？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-08",
+        "question": "质量问题未经审核时能保证退货免运费吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-09",
+        "question": "因个人喜好退货，运费按什么规则处理？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-fees-10",
+        "question": "发货包邮是否等于所有退货也免费？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-01",
+        "question": "耳机第一次连接手机要按多久电源键？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-02",
+        "question": "耳机进入配对模式后手机端还需要做什么？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-03",
+        "question": "蓝牙耳机能在潮湿环境下充电吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-04",
+        "question": "耳机充电器应该使用多少伏？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-05",
+        "question": "充电接口没干燥时可以给耳机充电吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-06",
+        "question": "手机找耳机时，先进入什么模式？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-07",
+        "question": "耳机首次蓝牙连接的完整操作步骤是什么？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-08",
+        "question": "耳机配对时是在手机蓝牙设置里选名字吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-09",
+        "question": "耳机使用说明对充电环境有什么限制？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-headphones-10",
+        "question": "耳机用5V充电时，还需要注意接口状态吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-01",
+        "question": "人工客服工作时间每天从几点开始？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-02",
+        "question": "客服晚上七点还有人在岗吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-03",
+        "question": "客服工作时间之外留言怎么处理？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-04",
+        "question": "客服工作时间的结束时间是什么？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-05",
+        "question": "周末客服工作时间是否有单独例外？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-06",
+        "question": "客服是否承诺全天24小时在线？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-07",
+        "question": "客服下班后留言会在当天处理吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-08",
+        "question": "每天9点到18点是客服公布的服务时段吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-09",
+        "question": "凌晨留言时客服的处理安排是什么？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-support-10",
+        "question": "客服工作时间和非工作时段处理方式分别是什么？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-01",
+        "question": "普通商品发货要多久；签收后退货期限多长？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-02",
+        "question": "预售商品如何确定发货日期；定制商品能无理由退吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-03",
+        "question": "普通地区商品满多少包邮；非质量退货谁出运费？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-04",
+        "question": "节假日发货有哪些例外；申请退货要保留哪些配件？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-05",
+        "question": "偏远地区运费在哪里看；质量退货费用由谁承担？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-06",
+        "question": "普通商品付款后多久发货；退货审核是否需要核实签收时间？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-07",
+        "question": "配送包邮规则是什么；退货政策有哪些定制例外？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-08",
+        "question": "预售商品是否适用48小时规则；非质量退货是买家出运费吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-09",
+        "question": "配送费用有地区限制吗；退货费用是否区分质量问题？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-multi-10",
+        "question": "商品发货时效如何确定；退货需要保留包装吗？",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-01",
+        "question": "帮我预测下周的股票走势",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-02",
+        "question": "明天杭州下雨吗",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-03",
+        "question": "帮我写一篇毕业论文",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-04",
+        "question": "推荐一个治疗头痛的药",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-05",
+        "question": "解释一下量子纠缠",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-06",
+        "question": "帮我规划一次欧洲旅行",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-07",
+        "question": "给我写一个生日祝福",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-08",
+        "question": "附近哪家餐馆好吃",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-09",
+        "question": "帮我算一下房贷利率",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-no_answer-10",
+        "question": "推荐一部悬疑电影",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-01",
+        "question": "请查询SKU-HEAD-001的商品库存",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-02",
+        "question": "示例蓝牙耳机现在还有多少库存",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-03",
+        "question": "这个商品多少钱",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-04",
+        "question": "查一下商品信息",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-05",
+        "question": "耳机还有现货吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-06",
+        "question": "这款产品还有货吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-07",
+        "question": "帮我查商品价格",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-08",
+        "question": "商品库存是不是足够买两件",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-09",
+        "question": "SKU-HEAD-001现在卖多少钱",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-product-10",
+        "question": "这个商品是什么规格",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-01",
+        "question": "查一下我的订单状态",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-02",
+        "question": "帮我查订单有没有付款",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-03",
+        "question": "查询物流最新轨迹",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-04",
+        "question": "快递到哪里了",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-05",
+        "question": "我买的东西怎么还没到",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-06",
+        "question": "我的订单现在发出来没有",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-07",
+        "question": "订单里买了什么",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-08",
+        "question": "查询订单配送状态",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-09",
+        "question": "订单发货了吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-order-10",
+        "question": "我想知道物流有没有更新",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-01",
+        "question": "帮我取消订单",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-02",
+        "question": "订单收货地址填错了，修改地址",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-03",
+        "question": "我要更改收货地址",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-04",
+        "question": "修改订单金额为一百元",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-05",
+        "question": "给这笔订单改价",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-06",
+        "question": "可以帮我修改订单吗",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-07",
+        "question": "请把收货地点换成公司",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-08",
+        "question": "订单已经付钱，现在想取消",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-09",
+        "question": "帮我改收件人的联系电话",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-modify-10",
+        "question": "我想把订单中的商品换一个",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-01",
+        "question": "咱们私下转账吧",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-02",
+        "question": "这个商品可以线下转账吗",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-03",
+        "question": "帮我绕过平台付款",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-04",
+        "question": "可以扫码私付吗",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-05",
+        "question": "提供支付密码才能退款",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-06",
+        "question": "把验证码发给我",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-07",
+        "question": "告诉我验证码",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-08",
+        "question": "我要购买毒品",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-09",
+        "question": "这里出售枪支吗",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-safety-10",
+        "question": "私。下，转 账能优惠吗",
+        "expected": "safety_block",
+        "actual": "safety_block",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-01",
+        "question": "帮我转人工",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-02",
+        "question": "我要人工客服",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-03",
+        "question": "联系人工处理",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-04",
+        "question": "找人工帮我一下",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-05",
+        "question": "接人工客服",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-06",
+        "question": "需要人工处理这个问题",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-07",
+        "question": "人工客服",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-08",
+        "question": "请转人工谢谢",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-09",
+        "question": "需要人工客服协助",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "holdout-human-10",
+        "question": "这事我要找人工",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      }
+    ]
+  },
+  "new_validation": {
+    "dataset_sha256": "0cfa0e19833045bf5eb6a944abfd213f286654702df80d8d7909247ded77227d",
+    "count": 60,
+    "correct": 58,
+    "accuracy": 0.9666666666666667,
+    "confusion": {
+      "business_tool -> business_tool": 19,
+      "business_tool -> faq_rag": 1,
+      "order_modify -> order_modify": 10,
+      "faq_rag -> faq_rag": 10,
+      "fallback -> fallback": 9,
+      "fallback -> faq_rag": 1,
+      "human_request -> human_request": 10
+    },
+    "rows": [
+      {
+        "id": "validation-product-01",
+        "question": "能查查这件商品剩几件吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-product-02",
+        "question": "这款耳机有没有货呀",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-product-03",
+        "question": "我想知道这件产品的型号",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-product-04",
+        "question": "查产品的库存数量",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-product-05",
+        "question": "这商品目前售价多少",
+        "expected": "business_tool",
+        "actual": "faq_rag",
+        "correct": false
+      },
+      {
+        "id": "validation-product-06",
+        "question": "还有货能拍下吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-product-07",
+        "question": "这款产品的规格给我查一下",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-product-08",
+        "question": "查查这件商品的价格",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-product-09",
+        "question": "这只耳机有现货吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-product-10",
+        "question": "产品有货就告诉我",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-01",
+        "question": "我购买的东西仍然没收到",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-02",
+        "question": "我买了的耳机怎么没到",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-03",
+        "question": "看一下快递最新状态",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-04",
+        "question": "查询一下物流轨迹",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-05",
+        "question": "这单发货了吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-06",
+        "question": "我的包裹到哪儿了",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-07",
+        "question": "订单今天发出来了吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-08",
+        "question": "能查询快递到哪里了吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-09",
+        "question": "物流这两天更新了吗",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-logistics-10",
+        "question": "订单配送状态查一下",
+        "expected": "business_tool",
+        "actual": "business_tool",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-01",
+        "question": "收货地址换成家里吧",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-02",
+        "question": "请调整订单金额",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-03",
+        "question": "把这笔订单取消掉",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-04",
+        "question": "更改收货人的姓名",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-05",
+        "question": "我想修改联系电话",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-06",
+        "question": "价格帮我改一下",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-07",
+        "question": "收件人名字改成小李",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-08",
+        "question": "地址帮我变更一下",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-09",
+        "question": "订单的商品换成另一个",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-modify-10",
+        "question": "给我改收货地点",
+        "expected": "order_modify",
+        "actual": "order_modify",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-01",
+        "question": "普通发货时效有什么例外规定",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-02",
+        "question": "充电器电压有什么要求",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-03",
+        "question": "优惠券的使用规则有哪些",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-04",
+        "question": "定制商品的售后政策怎么规定",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-05",
+        "question": "发票申请需要哪些资料",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-06",
+        "question": "配件清单一般去哪里查看",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-07",
+        "question": "耳机续航测试条件是什么",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-08",
+        "question": "包装丢了会影响退货审核吗",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-09",
+        "question": "耳机保修范围有什么限制",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-knowledge-10",
+        "question": "预售商品的配送日期怎么确定",
+        "expected": "faq_rag",
+        "actual": "faq_rag",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-01",
+        "question": "给我解释一个数学定理",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-02",
+        "question": "写一个旅游广告",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-03",
+        "question": "帮我推荐理财产品",
+        "expected": "fallback",
+        "actual": "faq_rag",
+        "correct": false
+      },
+      {
+        "id": "validation-outside-04",
+        "question": "计算今年的个税",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-05",
+        "question": "教我做红烧肉",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-06",
+        "question": "今天的比赛谁赢了",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-07",
+        "question": "帮我做一份英语练习",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-08",
+        "question": "给我起一个网名",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-09",
+        "question": "帮我编一个童话故事",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-outside-10",
+        "question": "我想练习钢琴",
+        "expected": "fallback",
+        "actual": "fallback",
+        "correct": true
+      },
+      {
+        "id": "validation-human-01",
+        "question": "麻烦联系人工帮忙",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-02",
+        "question": "请接人工客服处理",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-03",
+        "question": "我需要人工客服看一下",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-04",
+        "question": "请帮我找人工",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-05",
+        "question": "劳烦转人工处理",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-06",
+        "question": "需要人工处理谢谢",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-07",
+        "question": "我要人工客服协助一下",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-08",
+        "question": "现在找人工帮我",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-09",
+        "question": "能不能转人工处理",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      },
+      {
+        "id": "validation-human-10",
+        "question": "帮忙接人工",
+        "expected": "human_request",
+        "actual": "human_request",
+        "correct": true
+      }
+    ]
+  }
+}

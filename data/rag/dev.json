@@ -1,0 +1,5 @@
+[
+  {"id":"dev-1","question":"普通商品多久发货","reference_answer":"付款后48小时内；预售按商品页","evidence":["shipping"],"expected":"supported","category":"simple"},
+  {"id":"dev-2","question":"如何蓝牙配对","reference_answer":"长按电源键5秒后在手机蓝牙设置选择","evidence":["headphones"],"expected":"supported","category":"simple"},
+  {"id":"dev-3","question":"请帮我预测股票","reference_answer":"转人工或拒答","evidence":[],"expected":"no_evidence","category":"no_answer"}
+]

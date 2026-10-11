@@ -1,0 +1,482 @@
+[
+  {
+    "id": "validation-product-01",
+    "question": "能查查这件商品剩几件吗",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-02",
+    "question": "这款耳机有没有货呀",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-03",
+    "question": "我想知道这件产品的型号",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-04",
+    "question": "查产品的库存数量",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-05",
+    "question": "这商品目前售价多少",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-06",
+    "question": "还有货能拍下吗",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-07",
+    "question": "这款产品的规格给我查一下",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-08",
+    "question": "查查这件商品的价格",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-09",
+    "question": "这只耳机有现货吗",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-product-10",
+    "question": "产品有货就告诉我",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-01",
+    "question": "我购买的东西仍然没收到",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-02",
+    "question": "我买了的耳机怎么没到",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-03",
+    "question": "看一下快递最新状态",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-04",
+    "question": "查询一下物流轨迹",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-05",
+    "question": "这单发货了吗",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-06",
+    "question": "我的包裹到哪儿了",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-07",
+    "question": "订单今天发出来了吗",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-08",
+    "question": "能查询快递到哪里了吗",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-09",
+    "question": "物流这两天更新了吗",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-logistics-10",
+    "question": "订单配送状态查一下",
+    "expected_route": "business_tool",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-01",
+    "question": "收货地址换成家里吧",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-02",
+    "question": "请调整订单金额",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-03",
+    "question": "把这笔订单取消掉",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-04",
+    "question": "更改收货人的姓名",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-05",
+    "question": "我想修改联系电话",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-06",
+    "question": "价格帮我改一下",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-07",
+    "question": "收件人名字改成小李",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-08",
+    "question": "地址帮我变更一下",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-09",
+    "question": "订单的商品换成另一个",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-modify-10",
+    "question": "给我改收货地点",
+    "expected_route": "order_modify",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-01",
+    "question": "普通发货时效有什么例外规定",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-02",
+    "question": "充电器电压有什么要求",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-03",
+    "question": "优惠券的使用规则有哪些",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-04",
+    "question": "定制商品的售后政策怎么规定",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-05",
+    "question": "发票申请需要哪些资料",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-06",
+    "question": "配件清单一般去哪里查看",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-07",
+    "question": "耳机续航测试条件是什么",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-08",
+    "question": "包装丢了会影响退货审核吗",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-09",
+    "question": "耳机保修范围有什么限制",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-knowledge-10",
+    "question": "预售商品的配送日期怎么确定",
+    "expected_route": "faq_rag",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-01",
+    "question": "给我解释一个数学定理",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-02",
+    "question": "写一个旅游广告",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-03",
+    "question": "帮我推荐理财产品",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-04",
+    "question": "计算今年的个税",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-05",
+    "question": "教我做红烧肉",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-06",
+    "question": "今天的比赛谁赢了",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-07",
+    "question": "帮我做一份英语练习",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-08",
+    "question": "给我起一个网名",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-09",
+    "question": "帮我编一个童话故事",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-outside-10",
+    "question": "我想练习钢琴",
+    "expected_route": "fallback",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-01",
+    "question": "麻烦联系人工帮忙",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-02",
+    "question": "请接人工客服处理",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-03",
+    "question": "我需要人工客服看一下",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-04",
+    "question": "请帮我找人工",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-05",
+    "question": "劳烦转人工处理",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-06",
+    "question": "需要人工处理谢谢",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-07",
+    "question": "我要人工客服协助一下",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-08",
+    "question": "现在找人工帮我",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-09",
+    "question": "能不能转人工处理",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  },
+  {
+    "id": "validation-human-10",
+    "question": "帮忙接人工",
+    "expected_route": "human_request",
+    "origin": "synthetic_authored",
+    "reviewed": false,
+    "reviewer": null
+  }
+]

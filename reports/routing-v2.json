@@ -1,0 +1,208 @@
+{
+  "dataset": "synthetic-routing-25",
+  "cases": 25,
+  "accuracy": 0.96,
+  "confusion_matrix": {
+    "clarification": {
+      "clarification": 1,
+      "faq": 0,
+      "multi_evidence": 0,
+      "out_of_scope": 0,
+      "single_hop": 0,
+      "tool": 0
+    },
+    "faq": {
+      "clarification": 0,
+      "faq": 5,
+      "multi_evidence": 0,
+      "out_of_scope": 0,
+      "single_hop": 0,
+      "tool": 0
+    },
+    "multi_evidence": {
+      "clarification": 0,
+      "faq": 0,
+      "multi_evidence": 3,
+      "out_of_scope": 0,
+      "single_hop": 0,
+      "tool": 0
+    },
+    "out_of_scope": {
+      "clarification": 0,
+      "faq": 0,
+      "multi_evidence": 0,
+      "out_of_scope": 4,
+      "single_hop": 0,
+      "tool": 0
+    },
+    "single_hop": {
+      "clarification": 0,
+      "faq": 0,
+      "multi_evidence": 0,
+      "out_of_scope": 1,
+      "single_hop": 5,
+      "tool": 0
+    },
+    "tool": {
+      "clarification": 0,
+      "faq": 0,
+      "multi_evidence": 0,
+      "out_of_scope": 0,
+      "single_hop": 0,
+      "tool": 6
+    }
+  },
+  "rows": [
+    {
+      "id": "route-01",
+      "expected": "faq",
+      "predicted": "faq",
+      "correct": true
+    },
+    {
+      "id": "route-02",
+      "expected": "faq",
+      "predicted": "faq",
+      "correct": true
+    },
+    {
+      "id": "route-03",
+      "expected": "faq",
+      "predicted": "faq",
+      "correct": true
+    },
+    {
+      "id": "route-04",
+      "expected": "faq",
+      "predicted": "faq",
+      "correct": true
+    },
+    {
+      "id": "route-05",
+      "expected": "faq",
+      "predicted": "faq",
+      "correct": true
+    },
+    {
+      "id": "route-06",
+      "expected": "single_hop",
+      "predicted": "single_hop",
+      "correct": true
+    },
+    {
+      "id": "route-07",
+      "expected": "single_hop",
+      "predicted": "single_hop",
+      "correct": true
+    },
+    {
+      "id": "route-08",
+      "expected": "single_hop",
+      "predicted": "single_hop",
+      "correct": true
+    },
+    {
+      "id": "route-09",
+      "expected": "single_hop",
+      "predicted": "single_hop",
+      "correct": true
+    },
+    {
+      "id": "route-10",
+      "expected": "single_hop",
+      "predicted": "single_hop",
+      "correct": true
+    },
+    {
+      "id": "route-11",
+      "expected": "multi_evidence",
+      "predicted": "multi_evidence",
+      "correct": true
+    },
+    {
+      "id": "route-12",
+      "expected": "multi_evidence",
+      "predicted": "multi_evidence",
+      "correct": true
+    },
+    {
+      "id": "route-13",
+      "expected": "multi_evidence",
+      "predicted": "multi_evidence",
+      "correct": true
+    },
+    {
+      "id": "route-14",
+      "expected": "tool",
+      "predicted": "tool",
+      "correct": true
+    },
+    {
+      "id": "route-15",
+      "expected": "tool",
+      "predicted": "tool",
+      "correct": true
+    },
+    {
+      "id": "route-16",
+      "expected": "tool",
+      "predicted": "tool",
+      "correct": true
+    },
+    {
+      "id": "route-17",
+      "expected": "tool",
+      "predicted": "tool",
+      "correct": true
+    },
+    {
+      "id": "route-18",
+      "expected": "tool",
+      "predicted": "tool",
+      "correct": true
+    },
+    {
+      "id": "route-19",
+      "expected": "out_of_scope",
+      "predicted": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "route-20",
+      "expected": "out_of_scope",
+      "predicted": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "route-21",
+      "expected": "out_of_scope",
+      "predicted": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "route-22",
+      "expected": "out_of_scope",
+      "predicted": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "route-23",
+      "expected": "clarification",
+      "predicted": "clarification",
+      "correct": true
+    },
+    {
+      "id": "route-24",
+      "expected": "tool",
+      "predicted": "tool",
+      "correct": true
+    },
+    {
+      "id": "route-25",
+      "expected": "single_hop",
+      "predicted": "out_of_scope",
+      "correct": false
+    }
+  ],
+  "limitations": "合成小样本，规则路由非模型意图识别；不代表真实业务准确率。保留未覆盖同义表达错误。"
+}

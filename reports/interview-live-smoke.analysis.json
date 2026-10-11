@@ -1,0 +1,226 @@
+{
+  "run_id": "de3166c8-ac31-4053-9ded-2be9e660bfd7",
+  "comparison": {
+    "vector": {
+      "summary": {
+        "cases": 1,
+        "document_precision_at_5": 0.2,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 1.0,
+        "p95_pipeline_ms": 3365.513,
+        "status_counts": {
+          "supported": 1
+        },
+        "reported_generation_tokens": 604,
+        "reported_enhancement_tokens": 0,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.0,
+        "p95_pipeline_ms": 0.0,
+        "reported_generation_tokens": 0,
+        "reported_enhancement_tokens": 0
+      },
+      "reported_chat_cost_estimate": null
+    },
+    "hybrid": {
+      "summary": {
+        "cases": 1,
+        "document_precision_at_5": 0.2,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 1.0,
+        "p95_pipeline_ms": 3628.827,
+        "status_counts": {
+          "supported": 1
+        },
+        "reported_generation_tokens": 604,
+        "reported_enhancement_tokens": 0,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.0,
+        "p95_pipeline_ms": 263.3140000000003,
+        "reported_generation_tokens": 0,
+        "reported_enhancement_tokens": 0
+      },
+      "reported_chat_cost_estimate": null
+    },
+    "hybrid_rerank": {
+      "summary": {
+        "cases": 1,
+        "document_precision_at_5": 0.2,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 1.0,
+        "p95_pipeline_ms": 5448.239,
+        "status_counts": {
+          "supported": 1
+        },
+        "reported_generation_tokens": 458,
+        "reported_enhancement_tokens": 538,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.0,
+        "p95_pipeline_ms": 2082.7259999999997,
+        "reported_generation_tokens": -146,
+        "reported_enhancement_tokens": 538
+      },
+      "reported_chat_cost_estimate": null
+    },
+    "hybrid_rerank_evidence": {
+      "summary": {
+        "cases": 1,
+        "document_precision_at_5": 0.2,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 1.0,
+        "p95_pipeline_ms": 6215.072,
+        "status_counts": {
+          "supported": 1
+        },
+        "reported_generation_tokens": 458,
+        "reported_enhancement_tokens": 703,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.0,
+        "p95_pipeline_ms": 2849.559,
+        "reported_generation_tokens": -146,
+        "reported_enhancement_tokens": 703
+      },
+      "reported_chat_cost_estimate": null
+    }
+  },
+  "cost_scope": "reported chat usage only; excludes embeddings, indexing, failed calls with missing usage, infrastructure; not an invoice",
+  "input_price_per_million": null,
+  "output_price_per_million": null,
+  "failure_cases": [
+    {
+      "id": "holdout-product-04",
+      "question": "查一下商品信息",
+      "expected": "business_tool",
+      "actual": "faq_rag",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-product-05",
+      "question": "耳机还有现货吗",
+      "expected": "business_tool",
+      "actual": "faq_rag",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-product-06",
+      "question": "这款产品还有货吗",
+      "expected": "business_tool",
+      "actual": "faq_rag",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-product-10",
+      "question": "这个商品是什么规格",
+      "expected": "business_tool",
+      "actual": "faq_rag",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-order-04",
+      "question": "快递到哪里了",
+      "expected": "business_tool",
+      "actual": "fallback",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-order-05",
+      "question": "我买的东西怎么还没到",
+      "expected": "business_tool",
+      "actual": "fallback",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-order-07",
+      "question": "订单里买了什么",
+      "expected": "business_tool",
+      "actual": "fallback",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-order-09",
+      "question": "订单发货了吗",
+      "expected": "business_tool",
+      "actual": "faq_rag",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-order-10",
+      "question": "我想知道物流有没有更新",
+      "expected": "business_tool",
+      "actual": "fallback",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-modify-07",
+      "question": "请把收货地点换成公司",
+      "expected": "order_modify",
+      "actual": "fallback",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-modify-08",
+      "question": "订单已经付钱，现在想取消",
+      "expected": "order_modify",
+      "actual": "fallback",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-modify-09",
+      "question": "帮我改收件人的联系电话",
+      "expected": "order_modify",
+      "actual": "fallback",
+      "correct": false,
+      "reviewed": false
+    },
+    {
+      "id": "holdout-modify-10",
+      "question": "我想把订单中的商品换一个",
+      "expected": "order_modify",
+      "actual": "faq_rag",
+      "correct": false,
+      "reviewed": false
+    }
+  ]
+}

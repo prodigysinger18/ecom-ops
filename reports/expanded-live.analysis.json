@@ -1,0 +1,136 @@
+{
+  "run_id": "19437ba4-3f1b-486a-9d94-87e7c8f856e0",
+  "comparison": {
+    "vector": {
+      "summary": {
+        "cases": 60,
+        "document_precision_at_5": 0.2366666666666667,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 0.8166666666666667,
+        "p95_pipeline_ms": 6103.657,
+        "status_counts": {
+          "supported": 43,
+          "generation_insufficient": 15,
+          "generation_conflict": 1,
+          "stage_failure": 1
+        },
+        "rerank_fallback_count": 0,
+        "reported_generation_tokens": 33452,
+        "reported_enhancement_tokens": 0,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.0,
+        "p95_pipeline_ms": 0.0,
+        "reported_generation_tokens": 0,
+        "reported_enhancement_tokens": 0
+      },
+      "reported_chat_cost_estimate": null
+    },
+    "hybrid": {
+      "summary": {
+        "cases": 60,
+        "document_precision_at_5": 0.2366666666666667,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 0.8861111111111111,
+        "p95_pipeline_ms": 5621.291,
+        "status_counts": {
+          "supported": 42,
+          "generation_insufficient": 16,
+          "generation_conflict": 1,
+          "stage_failure": 1
+        },
+        "rerank_fallback_count": 0,
+        "reported_generation_tokens": 33157,
+        "reported_enhancement_tokens": 0,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.06944444444444442,
+        "p95_pipeline_ms": -482.366,
+        "reported_generation_tokens": -295,
+        "reported_enhancement_tokens": 0
+      },
+      "reported_chat_cost_estimate": null
+    },
+    "hybrid_rerank": {
+      "summary": {
+        "cases": 60,
+        "document_precision_at_5": 0.2366666666666667,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 0.8944444444444445,
+        "p95_pipeline_ms": 10019.194,
+        "status_counts": {
+          "supported": 42,
+          "generation_insufficient": 16,
+          "generation_conflict": 1,
+          "stage_failure": 1
+        },
+        "rerank_fallback_count": 32,
+        "reported_generation_tokens": 32575,
+        "reported_enhancement_tokens": 38687,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.07777777777777783,
+        "p95_pipeline_ms": 3915.5369999999994,
+        "reported_generation_tokens": -877,
+        "reported_enhancement_tokens": 38687
+      },
+      "reported_chat_cost_estimate": null
+    },
+    "hybrid_rerank_evidence": {
+      "summary": {
+        "cases": 60,
+        "document_precision_at_5": 0.2366666666666667,
+        "document_recall_at_5": 1.0,
+        "document_mrr_at_5": 0.8861111111111111,
+        "p95_pipeline_ms": 10977.054,
+        "status_counts": {
+          "supported": 39,
+          "generation_insufficient": 6,
+          "evidence_rejected": 15
+        },
+        "rerank_fallback_count": 32,
+        "reported_generation_tokens": 26246,
+        "reported_enhancement_tokens": 51709,
+        "embedding_tokens": null,
+        "provider_cost": null,
+        "answer_accuracy": null,
+        "faithfulness": null,
+        "hallucination_rate": null
+      },
+      "delta_from_vector": {
+        "document_recall_at_5": 0.0,
+        "document_precision_at_5": 0.0,
+        "document_mrr_at_5": 0.06944444444444442,
+        "p95_pipeline_ms": 4873.397,
+        "reported_generation_tokens": -7206,
+        "reported_enhancement_tokens": 51709
+      },
+      "reported_chat_cost_estimate": null
+    }
+  },
+  "cost_scope": "reported chat usage only; excludes embeddings, indexing, failed calls with missing usage, infrastructure; not an invoice",
+  "input_price_per_million": null,
+  "output_price_per_million": null,
+  "failure_cases": []
+}

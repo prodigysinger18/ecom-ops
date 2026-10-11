@@ -1,0 +1,146 @@
+{
+  "dataset": "synthetic-dev",
+  "generation": "extractive",
+  "provider_cost": null,
+  "limitations": "合成独立测试题，仅检查路由、证据文档召回和原文引用；不代表人工标注答案准确率、语义质量、并发延迟或生产成本",
+  "results": {
+    "keyword": {
+      "cases": 3,
+      "route_correct_rate": 1,
+      "evidence_recall_at_5": 1.0,
+      "p95_ms": 2.611,
+      "rows": [
+        {
+          "id": "dev-1",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 2.611,
+          "citations": [
+            "shipping",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "dev-2",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.063,
+          "citations": [
+            "headphones"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "dev-3",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.027,
+          "citations": [],
+          "literal_citation_valid": true
+        }
+      ]
+    },
+    "vector": {
+      "cases": 3,
+      "route_correct_rate": 1,
+      "evidence_recall_at_5": 1.0,
+      "p95_ms": 1.409,
+      "rows": [
+        {
+          "id": "dev-1",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.409,
+          "citations": [
+            "shipping",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "dev-2",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.303,
+          "citations": [
+            "headphones"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "dev-3",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.392,
+          "citations": [],
+          "literal_citation_valid": true
+        }
+      ]
+    },
+    "hybrid": {
+      "cases": 3,
+      "route_correct_rate": 1,
+      "evidence_recall_at_5": 1.0,
+      "p95_ms": 1.416,
+      "rows": [
+        {
+          "id": "dev-1",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.416,
+          "citations": [
+            "shipping",
+            "returns"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "dev-2",
+          "category": "simple",
+          "expected": "supported",
+          "actual": "supported",
+          "route_correct": true,
+          "evidence_recall_at_5": 1.0,
+          "elapsed_ms": 1.401,
+          "citations": [
+            "headphones"
+          ],
+          "literal_citation_valid": true
+        },
+        {
+          "id": "dev-3",
+          "category": "no_answer",
+          "expected": "no_evidence",
+          "actual": "no_evidence",
+          "route_correct": true,
+          "evidence_recall_at_5": null,
+          "elapsed_ms": 1.301,
+          "citations": [],
+          "literal_citation_valid": true
+        }
+      ]
+    }
+  }
+}

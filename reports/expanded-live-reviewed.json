@@ -1,0 +1,29 @@
+{
+  "run_id": "19437ba4-3f1b-486a-9d94-87e7c8f856e0",
+  "metrics": {
+    "vector": {
+      "faithfulness": null,
+      "answer_accuracy": null,
+      "hallucination_rate": null,
+      "reviewed_cases": 0
+    },
+    "hybrid": {
+      "faithfulness": null,
+      "answer_accuracy": null,
+      "hallucination_rate": null,
+      "reviewed_cases": 0
+    },
+    "hybrid_rerank": {
+      "faithfulness": null,
+      "answer_accuracy": null,
+      "hallucination_rate": null,
+      "reviewed_cases": 0
+    },
+    "hybrid_rerank_evidence": {
+      "faithfulness": null,
+      "answer_accuracy": null,
+      "hallucination_rate": null,
+      "reviewed_cases": 0
+    }
+  }
+}

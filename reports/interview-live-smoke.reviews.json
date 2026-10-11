@@ -1,0 +1,50 @@
+[
+  {
+    "run_id": "de3166c8-ac31-4053-9ded-2be9e660bfd7",
+    "id": "holdout-shipping-01",
+    "profile": "vector",
+    "answer_sha256": "1a240ce242bc6679da743f8c2d1ecd89e17c749737d431b2ee847e122d375c74",
+    "reviewed": false,
+    "reviewer": null,
+    "answer_correct": null,
+    "has_hallucination": null,
+    "claims_total": null,
+    "claims_supported": null
+  },
+  {
+    "run_id": "de3166c8-ac31-4053-9ded-2be9e660bfd7",
+    "id": "holdout-shipping-01",
+    "profile": "hybrid",
+    "answer_sha256": "1a240ce242bc6679da743f8c2d1ecd89e17c749737d431b2ee847e122d375c74",
+    "reviewed": false,
+    "reviewer": null,
+    "answer_correct": null,
+    "has_hallucination": null,
+    "claims_total": null,
+    "claims_supported": null
+  },
+  {
+    "run_id": "de3166c8-ac31-4053-9ded-2be9e660bfd7",
+    "id": "holdout-shipping-01",
+    "profile": "hybrid_rerank",
+    "answer_sha256": "1a240ce242bc6679da743f8c2d1ecd89e17c749737d431b2ee847e122d375c74",
+    "reviewed": false,
+    "reviewer": null,
+    "answer_correct": null,
+    "has_hallucination": null,
+    "claims_total": null,
+    "claims_supported": null
+  },
+  {
+    "run_id": "de3166c8-ac31-4053-9ded-2be9e660bfd7",
+    "id": "holdout-shipping-01",
+    "profile": "hybrid_rerank_evidence",
+    "answer_sha256": "1a240ce242bc6679da743f8c2d1ecd89e17c749737d431b2ee847e122d375c74",
+    "reviewed": false,
+    "reviewer": null,
+    "answer_correct": null,
+    "has_hallucination": null,
+    "claims_total": null,
+    "claims_supported": null
+  }
+]

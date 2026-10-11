@@ -1,0 +1,20 @@
+{
+  "provider_calls": 84,
+  "embedding_calls": 36,
+  "chat_calls": 48,
+  "embedding_tokens": 258,
+  "chat_input_tokens": 9888,
+  "chat_output_tokens": 1314,
+  "calls_without_reported_usage": 0,
+  "provider_http_statuses": {
+    "200": 84
+  },
+  "estimated_known_usage_cny": null,
+  "price_source": null,
+  "rates_cny_per_million_tokens": {
+    "embedding": null,
+    "chat_input": null,
+    "chat_output": null
+  },
+  "note": "Reported usage includes generation/verification rejected by application. Failed/unreported usage may be billed; not an invoice. No RMB estimate without supplied sourced rates."
+}

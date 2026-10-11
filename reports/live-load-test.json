@@ -1,0 +1,2326 @@
+{
+  "started_at": "2026-10-11T05:59:45.692286+00:00",
+  "status": "completed",
+  "scope": "real DashScope models; loopback HTTP customer chat; simulated business/corpus; disposable SQLite; closed-loop concurrency, no streaming, not production SLA or answer accuracy",
+  "config": {
+    "workers": [
+      1,
+      3,
+      5
+    ],
+    "requests_per_level": 12,
+    "embedding_model": "text-embedding-v3",
+    "generation_model": "qwen-plus",
+    "rewrite": true,
+    "rerank": false,
+    "self_rag": false,
+    "min_similarity": 0.3,
+    "top_k": 5,
+    "provider_timeout_seconds": 15.0,
+    "rag_total_timeout_seconds": 45.0
+  },
+  "corpus_sha256": "733107fed6acd12c3fee8550efdb8dde20180b1b247f389f5e5a9515e2315e8d",
+  "scenarios": [
+    {
+      "kind": "rag",
+      "message": "退货需要保留哪些东西？"
+    },
+    {
+      "kind": "product",
+      "message": "示例蓝牙耳机还有现货吗？",
+      "product_id": 1001
+    },
+    {
+      "kind": "rag",
+      "message": "退货运费由谁承担？"
+    },
+    {
+      "kind": "order",
+      "message": "查询我的订单状态",
+      "order_no": "ECO202610090001"
+    },
+    {
+      "kind": "rag",
+      "message": "退款审核需要多久？"
+    },
+    {
+      "kind": "logistics",
+      "message": "我的订单物流到哪里了？",
+      "order_no": "ECO202610090001"
+    }
+  ],
+  "rounds": [
+    {
+      "workers": 1,
+      "summary": {
+        "requests": 12,
+        "mean_ms": 2325.7415,
+        "p50_ms": 15.703,
+        "p95_ms": 5546.144,
+        "max_ms": 5546.144,
+        "elapsed_seconds": 27.90994899999896,
+        "observed_throughput_rps": 0.429954207368865,
+        "http_successes": 12,
+        "business_successes": 10,
+        "business_success_rate": 0.8333333333333334,
+        "client_timeouts": 0,
+        "rag_requests": 6,
+        "rag_supported": 4,
+        "rag_fallbacks": {
+          "generation_insufficient": 2
+        },
+        "rag_latency": {
+          "requests": 6,
+          "mean_ms": 4638.1016666666665,
+          "p50_ms": 5211.566,
+          "p95_ms": 5546.144,
+          "max_ms": 5546.144
+        },
+        "tool_latency": {
+          "requests": 6,
+          "mean_ms": 13.381333333333334,
+          "p50_ms": 12.591,
+          "p95_ms": 15.703,
+          "max_ms": 15.703
+        },
+        "cost": {
+          "provider_calls": 28,
+          "embedding_calls": 12,
+          "chat_calls": 16,
+          "embedding_tokens": 86,
+          "chat_input_tokens": 3296,
+          "chat_output_tokens": 438,
+          "calls_without_reported_usage": 0,
+          "provider_http_statuses": {
+            "200": 28
+          },
+          "estimated_known_usage_cny": null,
+          "price_source": null,
+          "rates_cny_per_million_tokens": {
+            "embedding": null,
+            "chat_input": null,
+            "chat_output": null
+          },
+          "note": "Reported usage includes generation/verification rejected by application. Failed/unreported usage may be billed; not an invoice. No RMB estimate without supplied sourced rates."
+        }
+      },
+      "rows": [
+        {
+          "request_id": "a7bb217187f7475f86c2a4fdc27efcbe",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "退货需要保留商品、包装和配件 [2]\n退货需要保留审核要求的凭证 [1]",
+          "sources": [
+            "演示退货包装指引/退货打包（版本 demo-v1）：/docs/demo/packaging",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 5211.566,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 509.001
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 95,
+                "completion_tokens": 10,
+                "prompt_tokens": 85
+              },
+              "usage_reported": true,
+              "elapsed_ms": 866.617
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 490.187
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 355,
+                "completion_tokens": 80,
+                "prompt_tokens": 275
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2483.861
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 295,
+                "completion_tokens": 5,
+                "prompt_tokens": 290
+              },
+              "usage_reported": true,
+              "elapsed_ms": 800.543
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 1906.48,
+            "generation_and_verification_ms": 3284.587
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 5204
+        },
+        {
+          "request_id": "c2b7e73cbf7642d2a827b71112e2bf72",
+          "kind": "product",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "示例蓝牙耳机（SKU: SKU-HEAD-001），当前库存 128。",
+          "sources": [],
+          "tool_calls": [
+            "query_product"
+          ],
+          "http_ms": 13.077,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 8
+        },
+        {
+          "request_id": "e44622a6ad434152bc713af0dff238d3",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "非质量问题退货运费由买家承担 [1]\n经审核确认的质量问题退货运费由商家承担 [1]",
+          "sources": [
+            "演示退货政策/退货费用（版本 demo-v1）：/docs/demo/returns",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 5486.012,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 523.9
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 97,
+                "completion_tokens": 11,
+                "prompt_tokens": 86
+              },
+              "usage_reported": true,
+              "elapsed_ms": 936.956
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 557.663
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 366,
+                "completion_tokens": 89,
+                "prompt_tokens": 277
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2644.264
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 306,
+                "completion_tokens": 5,
+                "prompt_tokens": 301
+              },
+              "usage_reported": true,
+              "elapsed_ms": 763.769
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2061.56,
+            "generation_and_verification_ms": 3408.201
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 5481
+        },
+        {
+          "request_id": "b914706656214eafaf2793b44a60aaf1",
+          "kind": "order",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "订单 ECO202610090001 当前状态为 delivered。",
+          "sources": [],
+          "tool_calls": [
+            "query_order"
+          ],
+          "http_ms": 12.591,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 8
+        },
+        {
+          "request_id": "7f266b72e39b4f3782521cbb2dece84a",
+          "kind": "rag",
+          "status": 200,
+          "business_success": false,
+          "route": "faq_rag",
+          "handoff": true,
+          "answer": "生成服务无法确认充分依据，请转人工核实。",
+          "sources": [],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 3027.974,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 6,
+                "total_tokens": 6
+              },
+              "usage_reported": true,
+              "elapsed_ms": 501.891
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 94,
+                "completion_tokens": 10,
+                "prompt_tokens": 84
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1119.982
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 446.085
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 259,
+                "completion_tokens": 9,
+                "prompt_tokens": 250
+              },
+              "usage_reported": true,
+              "elapsed_ms": 899.315
+            }
+          ],
+          "fallback": "generation_insufficient",
+          "stage_times": {
+            "retrieval_ms": 2109.847,
+            "generation_and_verification_ms": 899.397
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 3023
+        },
+        {
+          "request_id": "8e566908ba2147c28f2d7546e1e0734a",
+          "kind": "logistics",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "物流状态：已签收，演示包裹已签收。",
+          "sources": [],
+          "tool_calls": [
+            "query_order",
+            "query_logistics"
+          ],
+          "http_ms": 15.703,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 11
+        },
+        {
+          "request_id": "1fdd815e08b649b0965443dc5b1e8eae",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "退货需要保留商品、包装和配件 [2]\n退货需要保留审核要求的凭证 [1]",
+          "sources": [
+            "演示退货包装指引/退货打包（版本 demo-v1）：/docs/demo/packaging",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 5264.39,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 500.206
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 95,
+                "completion_tokens": 10,
+                "prompt_tokens": 85
+              },
+              "usage_reported": true,
+              "elapsed_ms": 898.108
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 523.153
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 355,
+                "completion_tokens": 80,
+                "prompt_tokens": 275
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2459.348
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 295,
+                "completion_tokens": 5,
+                "prompt_tokens": 290
+              },
+              "usage_reported": true,
+              "elapsed_ms": 820.946
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 1964.807,
+            "generation_and_verification_ms": 3280.532
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 5259
+        },
+        {
+          "request_id": "246731ac1f3f4d0b9adaafee82532205",
+          "kind": "product",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "示例蓝牙耳机（SKU: SKU-HEAD-001），当前库存 128。",
+          "sources": [],
+          "tool_calls": [
+            "query_product"
+          ],
+          "http_ms": 11.894,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 7
+        },
+        {
+          "request_id": "6e59bd6f98b2465c95a185dc2a33e061",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "非质量问题退货运费由买家承担 [1]\n经审核确认的质量问题退货运费由商家承担 [1]",
+          "sources": [
+            "演示退货政策/退货费用（版本 demo-v1）：/docs/demo/returns",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 5546.144,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 522.376
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 97,
+                "completion_tokens": 11,
+                "prompt_tokens": 86
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1035.035
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 619.568
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 366,
+                "completion_tokens": 89,
+                "prompt_tokens": 277
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2576.515
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 306,
+                "completion_tokens": 5,
+                "prompt_tokens": 301
+              },
+              "usage_reported": true,
+              "elapsed_ms": 728.283
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2223.101,
+            "generation_and_verification_ms": 3304.965
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 5541
+        },
+        {
+          "request_id": "42334215b0654f7886cbf6b25c7c224a",
+          "kind": "order",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "订单 ECO202610090001 当前状态为 delivered。",
+          "sources": [],
+          "tool_calls": [
+            "query_order"
+          ],
+          "http_ms": 12.341,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 8
+        },
+        {
+          "request_id": "a0eb01c3f91845d9b3444b752a5c88d7",
+          "kind": "rag",
+          "status": 200,
+          "business_success": false,
+          "route": "faq_rag",
+          "handoff": true,
+          "answer": "生成服务无法确认充分依据，请转人工核实。",
+          "sources": [],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 3292.524,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 6,
+                "total_tokens": 6
+              },
+              "usage_reported": true,
+              "elapsed_ms": 486.312
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 94,
+                "completion_tokens": 10,
+                "prompt_tokens": 84
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1201.764
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 527.053
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 259,
+                "completion_tokens": 9,
+                "prompt_tokens": 250
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1018.104
+            }
+          ],
+          "fallback": "generation_insufficient",
+          "stage_times": {
+            "retrieval_ms": 2258.092,
+            "generation_and_verification_ms": 1018.162
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 3288
+        },
+        {
+          "request_id": "d9eec53d10a14ef88843ab8523b6c7c5",
+          "kind": "logistics",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "物流状态：已签收，演示包裹已签收。",
+          "sources": [],
+          "tool_calls": [
+            "query_order",
+            "query_logistics"
+          ],
+          "http_ms": 14.682,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 10
+        }
+      ]
+    },
+    {
+      "workers": 3,
+      "summary": {
+        "requests": 12,
+        "mean_ms": 2469.3194166666667,
+        "p50_ms": 42.124,
+        "p95_ms": 6121.645,
+        "max_ms": 6121.645,
+        "elapsed_seconds": 11.356886000001396,
+        "observed_throughput_rps": 1.0566276706483209,
+        "http_successes": 12,
+        "business_successes": 10,
+        "business_success_rate": 0.8333333333333334,
+        "client_timeouts": 0,
+        "rag_requests": 6,
+        "rag_supported": 4,
+        "rag_fallbacks": {
+          "generation_insufficient": 2
+        },
+        "rag_latency": {
+          "requests": 6,
+          "mean_ms": 4919.921,
+          "p50_ms": 5372.927,
+          "p95_ms": 6121.645,
+          "max_ms": 6121.645
+        },
+        "tool_latency": {
+          "requests": 6,
+          "mean_ms": 18.717833333333335,
+          "p50_ms": 13.62,
+          "p95_ms": 42.124,
+          "max_ms": 42.124
+        },
+        "cost": {
+          "provider_calls": 28,
+          "embedding_calls": 12,
+          "chat_calls": 16,
+          "embedding_tokens": 86,
+          "chat_input_tokens": 3296,
+          "chat_output_tokens": 438,
+          "calls_without_reported_usage": 0,
+          "provider_http_statuses": {
+            "200": 28
+          },
+          "estimated_known_usage_cny": null,
+          "price_source": null,
+          "rates_cny_per_million_tokens": {
+            "embedding": null,
+            "chat_input": null,
+            "chat_output": null
+          },
+          "note": "Reported usage includes generation/verification rejected by application. Failed/unreported usage may be billed; not an invoice. No RMB estimate without supplied sourced rates."
+        }
+      },
+      "rows": [
+        {
+          "request_id": "9275fc4874f647d5bf0148e908f1b391",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "退货需要保留商品、包装和配件 [2]\n退货需要保留审核要求的凭证 [1]",
+          "sources": [
+            "演示退货包装指引/退货打包（版本 demo-v1）：/docs/demo/packaging",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 5372.927,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 631.263
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 95,
+                "completion_tokens": 10,
+                "prompt_tokens": 85
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1001.601
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 497.61
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 355,
+                "completion_tokens": 80,
+                "prompt_tokens": 275
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2422.679
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 295,
+                "completion_tokens": 5,
+                "prompt_tokens": 290
+              },
+              "usage_reported": true,
+              "elapsed_ms": 746.864
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2174.357,
+            "generation_and_verification_ms": 3169.791
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 5361
+        },
+        {
+          "request_id": "f598883ad9674f77881ad808b9c95b45",
+          "kind": "product",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "示例蓝牙耳机（SKU: SKU-HEAD-001），当前库存 128。",
+          "sources": [],
+          "tool_calls": [
+            "query_product"
+          ],
+          "http_ms": 42.124,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 28
+        },
+        {
+          "request_id": "75e42d67bdb2450697d162e7022008ac",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "非质量问题退货运费由买家承担 [1]\n经审核确认的质量问题退货运费由商家承担 [1]",
+          "sources": [
+            "演示退货政策/退货费用（版本 demo-v1）：/docs/demo/returns",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 6121.645,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 709.757
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 97,
+                "completion_tokens": 11,
+                "prompt_tokens": 86
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1080.88
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 575.046
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 366,
+                "completion_tokens": 89,
+                "prompt_tokens": 277
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2761.125
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 306,
+                "completion_tokens": 5,
+                "prompt_tokens": 301
+              },
+              "usage_reported": true,
+              "elapsed_ms": 861.338
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2408.135,
+            "generation_and_verification_ms": 3622.642
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 6087
+        },
+        {
+          "request_id": "611aa0b34f944ffeb9e4461f8275f19b",
+          "kind": "order",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "订单 ECO202610090001 当前状态为 delivered。",
+          "sources": [],
+          "tool_calls": [
+            "query_order"
+          ],
+          "http_ms": 13.62,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 8
+        },
+        {
+          "request_id": "e4e831cd4f9c4d8e99ae15f0f7f42e8d",
+          "kind": "rag",
+          "status": 200,
+          "business_success": false,
+          "route": "faq_rag",
+          "handoff": true,
+          "answer": "生成服务无法确认充分依据，请转人工核实。",
+          "sources": [],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 3340.666,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 6,
+                "total_tokens": 6
+              },
+              "usage_reported": true,
+              "elapsed_ms": 745.703
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 94,
+                "completion_tokens": 10,
+                "prompt_tokens": 84
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1053.822
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 565.08
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 259,
+                "completion_tokens": 9,
+                "prompt_tokens": 250
+              },
+              "usage_reported": true,
+              "elapsed_ms": 917.089
+            }
+          ],
+          "fallback": "generation_insufficient",
+          "stage_times": {
+            "retrieval_ms": 2406.261,
+            "generation_and_verification_ms": 917.151
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 3336
+        },
+        {
+          "request_id": "40032552500149c1b451c543e856f495",
+          "kind": "logistics",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "物流状态：已签收，演示包裹已签收。",
+          "sources": [],
+          "tool_calls": [
+            "query_order",
+            "query_logistics"
+          ],
+          "http_ms": 15.017,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 10
+        },
+        {
+          "request_id": "ef1091c205a2405fa3345c7efb15ccf2",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "退货需要保留商品、包装和配件 [2]\n退货需要保留审核要求的凭证 [1]",
+          "sources": [
+            "演示退货包装指引/退货打包（版本 demo-v1）：/docs/demo/packaging",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 5659.82,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 523.07
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 95,
+                "completion_tokens": 10,
+                "prompt_tokens": 85
+              },
+              "usage_reported": true,
+              "elapsed_ms": 928.828
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 538.713
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 355,
+                "completion_tokens": 80,
+                "prompt_tokens": 275
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2623.335
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 295,
+                "completion_tokens": 5,
+                "prompt_tokens": 290
+              },
+              "usage_reported": true,
+              "elapsed_ms": 981.328
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2034.846,
+            "generation_and_verification_ms": 3604.849
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 5655
+        },
+        {
+          "request_id": "59871e9aa26d42f68b0e1ea461c8cece",
+          "kind": "product",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "示例蓝牙耳机（SKU: SKU-HEAD-001），当前库存 128。",
+          "sources": [],
+          "tool_calls": [
+            "query_product"
+          ],
+          "http_ms": 12.711,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 8
+        },
+        {
+          "request_id": "4d5916ad9b894a6ca4dd685b00c5013a",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "非质量问题退货运费由买家承担 [1]\n经审核确认的质量问题退货运费由商家承担 [1]",
+          "sources": [
+            "演示退货政策/退货费用（版本 demo-v1）：/docs/demo/returns",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 5970.545,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 629.648
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 97,
+                "completion_tokens": 11,
+                "prompt_tokens": 86
+              },
+              "usage_reported": true,
+              "elapsed_ms": 964.632
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 506.227
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 366,
+                "completion_tokens": 89,
+                "prompt_tokens": 277
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2833.286
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 306,
+                "completion_tokens": 5,
+                "prompt_tokens": 301
+              },
+              "usage_reported": true,
+              "elapsed_ms": 975.357
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2144.419,
+            "generation_and_verification_ms": 3808.863
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 5965
+        },
+        {
+          "request_id": "8db85d0204064a8db5421cbc71ac45ad",
+          "kind": "order",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "订单 ECO202610090001 当前状态为 delivered。",
+          "sources": [],
+          "tool_calls": [
+            "query_order"
+          ],
+          "http_ms": 12.791,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 7
+        },
+        {
+          "request_id": "8365c052c90b41008a7ed1d1c193cac8",
+          "kind": "rag",
+          "status": 200,
+          "business_success": false,
+          "route": "faq_rag",
+          "handoff": true,
+          "answer": "生成服务无法确认充分依据，请转人工核实。",
+          "sources": [],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 3053.923,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 6,
+                "total_tokens": 6
+              },
+              "usage_reported": true,
+              "elapsed_ms": 558.661
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 94,
+                "completion_tokens": 10,
+                "prompt_tokens": 84
+              },
+              "usage_reported": true,
+              "elapsed_ms": 913.055
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 547.263
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 259,
+                "completion_tokens": 9,
+                "prompt_tokens": 250
+              },
+              "usage_reported": true,
+              "elapsed_ms": 973.843
+            }
+          ],
+          "fallback": "generation_insufficient",
+          "stage_times": {
+            "retrieval_ms": 2062.534,
+            "generation_and_verification_ms": 973.92
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 3049
+        },
+        {
+          "request_id": "2dee9be3e7b34388b33d99ef11def319",
+          "kind": "logistics",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "物流状态：已签收，演示包裹已签收。",
+          "sources": [],
+          "tool_calls": [
+            "query_order",
+            "query_logistics"
+          ],
+          "http_ms": 16.044,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 11
+        }
+      ]
+    },
+    {
+      "workers": 5,
+      "summary": {
+        "requests": 12,
+        "mean_ms": 2678.6806666666666,
+        "p50_ms": 84.597,
+        "p95_ms": 6479.724,
+        "max_ms": 6479.724,
+        "elapsed_seconds": 6.829097300000285,
+        "observed_throughput_rps": 1.7571868539637734,
+        "http_successes": 12,
+        "business_successes": 10,
+        "business_success_rate": 0.8333333333333334,
+        "client_timeouts": 0,
+        "rag_requests": 6,
+        "rag_supported": 4,
+        "rag_fallbacks": {
+          "generation_insufficient": 2
+        },
+        "rag_latency": {
+          "requests": 6,
+          "mean_ms": 5325.8255,
+          "p50_ms": 5928.284,
+          "p95_ms": 6479.724,
+          "max_ms": 6479.724
+        },
+        "tool_latency": {
+          "requests": 6,
+          "mean_ms": 31.535833333333333,
+          "p50_ms": 16.037,
+          "p95_ms": 84.597,
+          "max_ms": 84.597
+        },
+        "cost": {
+          "provider_calls": 28,
+          "embedding_calls": 12,
+          "chat_calls": 16,
+          "embedding_tokens": 86,
+          "chat_input_tokens": 3296,
+          "chat_output_tokens": 438,
+          "calls_without_reported_usage": 0,
+          "provider_http_statuses": {
+            "200": 28
+          },
+          "estimated_known_usage_cny": null,
+          "price_source": null,
+          "rates_cny_per_million_tokens": {
+            "embedding": null,
+            "chat_input": null,
+            "chat_output": null
+          },
+          "note": "Reported usage includes generation/verification rejected by application. Failed/unreported usage may be billed; not an invoice. No RMB estimate without supplied sourced rates."
+        }
+      },
+      "rows": [
+        {
+          "request_id": "b8f0c10f3ca745f9a354b9dd7ddeeb09",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "退货需要保留商品、包装和配件 [2]\n退货需要保留审核要求的凭证 [1]",
+          "sources": [
+            "演示退货包装指引/退货打包（版本 demo-v1）：/docs/demo/packaging",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 5928.284,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 723.799
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 95,
+                "completion_tokens": 10,
+                "prompt_tokens": 85
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1099.155
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 600.187
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 355,
+                "completion_tokens": 80,
+                "prompt_tokens": 275
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2643.533
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 295,
+                "completion_tokens": 5,
+                "prompt_tokens": 290
+              },
+              "usage_reported": true,
+              "elapsed_ms": 790.43
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2468.626,
+            "generation_and_verification_ms": 3434.103
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 5922
+        },
+        {
+          "request_id": "e8ebd3b58286490db8f49f3e39e1738c",
+          "kind": "product",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "示例蓝牙耳机（SKU: SKU-HEAD-001），当前库存 128。",
+          "sources": [],
+          "tool_calls": [
+            "query_product"
+          ],
+          "http_ms": 28.897,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 13
+        },
+        {
+          "request_id": "554e1420fed441f0ad7748af8a794ec2",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "非质量问题退货运费由买家承担 [1]\n经审核确认的质量问题退货运费由商家承担 [1]",
+          "sources": [
+            "演示退货政策/退货费用（版本 demo-v1）：/docs/demo/returns",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 6404.347,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 736.423
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 97,
+                "completion_tokens": 11,
+                "prompt_tokens": 86
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1085.906
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 632.226
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 366,
+                "completion_tokens": 89,
+                "prompt_tokens": 277
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2749.677
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 306,
+                "completion_tokens": 5,
+                "prompt_tokens": 301
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1008.214
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2497.038,
+            "generation_and_verification_ms": 3758.059
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 6362
+        },
+        {
+          "request_id": "96ce044c1c9a4195a505a450bb17618e",
+          "kind": "order",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "订单 ECO202610090001 当前状态为 delivered。",
+          "sources": [],
+          "tool_calls": [
+            "query_order"
+          ],
+          "http_ms": 84.597,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 43
+        },
+        {
+          "request_id": "dfab2d8cf35647af91877aa5c5441188",
+          "kind": "rag",
+          "status": 200,
+          "business_success": false,
+          "route": "faq_rag",
+          "handoff": true,
+          "answer": "生成服务无法确认充分依据，请转人工核实。",
+          "sources": [],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 3826.754,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 6,
+                "total_tokens": 6
+              },
+              "usage_reported": true,
+              "elapsed_ms": 708.53
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 94,
+                "completion_tokens": 10,
+                "prompt_tokens": 84
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1092.092
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 612.434
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 259,
+                "completion_tokens": 9,
+                "prompt_tokens": 250
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1237.908
+            }
+          ],
+          "fallback": "generation_insufficient",
+          "stage_times": {
+            "retrieval_ms": 2459.749,
+            "generation_and_verification_ms": 1238.023
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 3755
+        },
+        {
+          "request_id": "71bba5c9f6714ef5a7e980bc044b4d5c",
+          "kind": "logistics",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "物流状态：已签收，演示包裹已签收。",
+          "sources": [],
+          "tool_calls": [
+            "query_order",
+            "query_logistics"
+          ],
+          "http_ms": 31.196,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 26
+        },
+        {
+          "request_id": "2f8bc74b0be24403820e7b2c7590bee9",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "退货需要保留商品、包装和配件 [2]\n退货需要保留审核要求的凭证 [1]",
+          "sources": [
+            "演示退货包装指引/退货打包（版本 demo-v1）：/docs/demo/packaging",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 6333.321,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 644.296
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 95,
+                "completion_tokens": 10,
+                "prompt_tokens": 85
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1569.826
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 624.175
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 355,
+                "completion_tokens": 80,
+                "prompt_tokens": 275
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2515.525
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 295,
+                "completion_tokens": 5,
+                "prompt_tokens": 290
+              },
+              "usage_reported": true,
+              "elapsed_ms": 911.907
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2885.439,
+            "generation_and_verification_ms": 3427.617
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 6327
+        },
+        {
+          "request_id": "892144ad2ea74b90becb9361dd32af93",
+          "kind": "product",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "示例蓝牙耳机（SKU: SKU-HEAD-001），当前库存 128。",
+          "sources": [],
+          "tool_calls": [
+            "query_product"
+          ],
+          "http_ms": 15.94,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 11
+        },
+        {
+          "request_id": "57e41e14ff7d4069a12bc23719a59725",
+          "kind": "rag",
+          "status": 200,
+          "business_success": true,
+          "route": "faq_rag",
+          "handoff": false,
+          "answer": "非质量问题退货运费由买家承担 [1]\n经审核确认的质量问题退货运费由商家承担 [1]",
+          "sources": [
+            "演示退货政策/退货费用（版本 demo-v1）：/docs/demo/returns",
+            "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+          ],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 6479.724,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 644.4
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 97,
+                "completion_tokens": 11,
+                "prompt_tokens": 86
+              },
+              "usage_reported": true,
+              "elapsed_ms": 1538.157
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 8,
+                "total_tokens": 8
+              },
+              "usage_reported": true,
+              "elapsed_ms": 663.619
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 366,
+                "completion_tokens": 89,
+                "prompt_tokens": 277
+              },
+              "usage_reported": true,
+              "elapsed_ms": 2712.764
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 306,
+                "completion_tokens": 5,
+                "prompt_tokens": 301
+              },
+              "usage_reported": true,
+              "elapsed_ms": 860.036
+            }
+          ],
+          "fallback": "supported",
+          "stage_times": {
+            "retrieval_ms": 2886.902,
+            "generation_and_verification_ms": 3573.011
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 6475
+        },
+        {
+          "request_id": "95cc7b85f87e4ee4a7795250be263142",
+          "kind": "order",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "订单 ECO202610090001 当前状态为 delivered。",
+          "sources": [],
+          "tool_calls": [
+            "query_order"
+          ],
+          "http_ms": 12.548,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 8
+        },
+        {
+          "request_id": "130bec65bf4e4afba861b5526d089653",
+          "kind": "rag",
+          "status": 200,
+          "business_success": false,
+          "route": "faq_rag",
+          "handoff": true,
+          "answer": "生成服务无法确认充分依据，请转人工核实。",
+          "sources": [],
+          "tool_calls": [
+            "retrieve_knowledge"
+          ],
+          "http_ms": 2982.523,
+          "provider_calls": [
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 6,
+                "total_tokens": 6
+              },
+              "usage_reported": true,
+              "elapsed_ms": 455.896
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 94,
+                "completion_tokens": 10,
+                "prompt_tokens": 84
+              },
+              "usage_reported": true,
+              "elapsed_ms": 928.393
+            },
+            {
+              "endpoint": "/embeddings",
+              "model": "text-embedding-v3",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "prompt_tokens": 7,
+                "total_tokens": 7
+              },
+              "usage_reported": true,
+              "elapsed_ms": 608.787
+            },
+            {
+              "endpoint": "/chat/completions",
+              "model": "qwen-plus",
+              "success": true,
+              "status": 200,
+              "usage": {
+                "total_tokens": 259,
+                "completion_tokens": 9,
+                "prompt_tokens": 250
+              },
+              "usage_reported": true,
+              "elapsed_ms": 926.849
+            }
+          ],
+          "fallback": "generation_insufficient",
+          "stage_times": {
+            "retrieval_ms": 2037.533,
+            "generation_and_verification_ms": 926.952
+          },
+          "generation": "dashscope",
+          "server_consultation_ms": 2978
+        },
+        {
+          "request_id": "29ea1c38205b4cddb4c4f2562edd5c3b",
+          "kind": "logistics",
+          "status": 200,
+          "business_success": true,
+          "route": "business_tool",
+          "handoff": false,
+          "answer": "物流状态：已签收，演示包裹已签收。",
+          "sources": [],
+          "tool_calls": [
+            "query_order",
+            "query_logistics"
+          ],
+          "http_ms": 16.037,
+          "provider_calls": [],
+          "fallback": null,
+          "stage_times": {},
+          "generation": null,
+          "server_consultation_ms": 11
+        }
+      ]
+    }
+  ],
+  "warmup": [
+    {
+      "request_id": "d4b265456d934770a5eec5b6c07e0141",
+      "kind": "rag",
+      "status": 200,
+      "business_success": true,
+      "route": "faq_rag",
+      "handoff": false,
+      "answer": "退货需要保留商品、包装和配件 [2]\n退货需要保留审核要求的凭证 [1]",
+      "sources": [
+        "演示退货包装指引/退货打包（版本 demo-v1）：/docs/demo/packaging",
+        "演示退货政策/退货期限（版本 demo-v1）：/docs/demo/returns"
+      ],
+      "tool_calls": [
+        "retrieve_knowledge"
+      ],
+      "http_ms": 5192.649,
+      "provider_calls": [
+        {
+          "endpoint": "/embeddings",
+          "model": "text-embedding-v3",
+          "success": true,
+          "status": 200,
+          "usage": {
+            "prompt_tokens": 7,
+            "total_tokens": 7
+          },
+          "usage_reported": true,
+          "elapsed_ms": 613.368
+        },
+        {
+          "endpoint": "/chat/completions",
+          "model": "qwen-plus",
+          "success": true,
+          "status": 200,
+          "usage": {
+            "total_tokens": 95,
+            "completion_tokens": 10,
+            "prompt_tokens": 85
+          },
+          "usage_reported": true,
+          "elapsed_ms": 843.148
+        },
+        {
+          "endpoint": "/embeddings",
+          "model": "text-embedding-v3",
+          "success": true,
+          "status": 200,
+          "usage": {
+            "prompt_tokens": 7,
+            "total_tokens": 7
+          },
+          "usage_reported": true,
+          "elapsed_ms": 497.116
+        },
+        {
+          "endpoint": "/chat/completions",
+          "model": "qwen-plus",
+          "success": true,
+          "status": 200,
+          "usage": {
+            "total_tokens": 355,
+            "completion_tokens": 80,
+            "prompt_tokens": 275
+          },
+          "usage_reported": true,
+          "elapsed_ms": 2397.246
+        },
+        {
+          "endpoint": "/chat/completions",
+          "model": "qwen-plus",
+          "success": true,
+          "status": 200,
+          "usage": {
+            "total_tokens": 295,
+            "completion_tokens": 5,
+            "prompt_tokens": 290
+          },
+          "usage_reported": true,
+          "elapsed_ms": 733.24
+        }
+      ],
+      "fallback": "supported",
+      "stage_times": {
+        "retrieval_ms": 1995.38,
+        "generation_and_verification_ms": 3130.755
+      },
+      "generation": "dashscope",
+      "server_consultation_ms": 5148
+    }
+  ],
+  "index_provider_calls": [
+    {
+      "endpoint": "/embeddings",
+      "model": "text-embedding-v3",
+      "success": true,
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 350,
+        "total_tokens": 350
+      },
+      "usage_reported": true,
+      "elapsed_ms": 1113.919
+    },
+    {
+      "endpoint": "/embeddings",
+      "model": "text-embedding-v3",
+      "success": true,
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 318,
+        "total_tokens": 318
+      },
+      "usage_reported": true,
+      "elapsed_ms": 699.93
+    },
+    {
+      "endpoint": "/embeddings",
+      "model": "text-embedding-v3",
+      "success": true,
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 294,
+        "total_tokens": 294
+      },
+      "usage_reported": true,
+      "elapsed_ms": 1087.92
+    },
+    {
+      "endpoint": "/embeddings",
+      "model": "text-embedding-v3",
+      "success": true,
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 289,
+        "total_tokens": 289
+      },
+      "usage_reported": true,
+      "elapsed_ms": 844.301
+    },
+    {
+      "endpoint": "/embeddings",
+      "model": "text-embedding-v3",
+      "success": true,
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 192,
+        "total_tokens": 192
+      },
+      "usage_reported": true,
+      "elapsed_ms": 645.741
+    }
+  ],
+  "indexed_chunks": 47,
+  "index_cost": {
+    "provider_calls": 5,
+    "embedding_calls": 5,
+    "chat_calls": 0,
+    "embedding_tokens": 1443,
+    "chat_input_tokens": 0,
+    "chat_output_tokens": 0,
+    "calls_without_reported_usage": 0,
+    "provider_http_statuses": {
+      "200": 5
+    },
+    "estimated_known_usage_cny": null,
+    "price_source": null,
+    "rates_cny_per_million_tokens": {
+      "embedding": null,
+      "chat_input": null,
+      "chat_output": null
+    },
+    "note": "Reported usage includes generation/verification rejected by application. Failed/unreported usage may be billed; not an invoice. No RMB estimate without supplied sourced rates."
+  },
+  "summary": {
+    "requests": 36,
+    "mean_ms": 2491.2471944444446,
+    "p50_ms": 84.597,
+    "p95_ms": 6404.347,
+    "max_ms": 6479.724,
+    "elapsed_seconds": 46.09593230000064,
+    "observed_throughput_rps": 0.7809799738012784,
+    "http_successes": 36,
+    "business_successes": 30,
+    "business_success_rate": 0.8333333333333334,
+    "client_timeouts": 0,
+    "rag_requests": 18,
+    "rag_supported": 12,
+    "rag_fallbacks": {
+      "generation_insufficient": 6
+    },
+    "rag_latency": {
+      "requests": 18,
+      "mean_ms": 4961.282722222222,
+      "p50_ms": 5372.927,
+      "p95_ms": 6479.724,
+      "max_ms": 6479.724
+    },
+    "tool_latency": {
+      "requests": 18,
+      "mean_ms": 21.211666666666666,
+      "p50_ms": 14.682,
+      "p95_ms": 84.597,
+      "max_ms": 84.597
+    },
+    "cost": {
+      "provider_calls": 84,
+      "embedding_calls": 36,
+      "chat_calls": 48,
+      "embedding_tokens": 258,
+      "chat_input_tokens": 9888,
+      "chat_output_tokens": 1314,
+      "calls_without_reported_usage": 0,
+      "provider_http_statuses": {
+        "200": 84
+      },
+      "estimated_known_usage_cny": null,
+      "price_source": null,
+      "rates_cny_per_million_tokens": {
+        "embedding": null,
+        "chat_input": null,
+        "chat_output": null
+      },
+      "note": "Reported usage includes generation/verification rejected by application. Failed/unreported usage may be billed; not an invoice. No RMB estimate without supplied sourced rates."
+    }
+  },
+  "total_run_cost": {
+    "provider_calls": 94,
+    "embedding_calls": 43,
+    "chat_calls": 51,
+    "embedding_tokens": 1715,
+    "chat_input_tokens": 10538,
+    "chat_output_tokens": 1409,
+    "calls_without_reported_usage": 0,
+    "provider_http_statuses": {
+      "200": 94
+    },
+    "estimated_known_usage_cny": null,
+    "price_source": null,
+    "rates_cny_per_million_tokens": {
+      "embedding": null,
+      "chat_input": null,
+      "chat_output": null
+    },
+    "note": "Reported usage includes generation/verification rejected by application. Failed/unreported usage may be billed; not an invoice. No RMB estimate without supplied sourced rates."
+  },
+  "finished_at": "2026-10-11T06:00:44.639324+00:00"
+}

@@ -1,0 +1,9 @@
+{
+  "version": "2026-10-11.v1",
+  "rules": [
+    {"category": "off_platform_payment", "terms": ["私下转账", "线下转账", "绕过平台付款", "扫码私付"]},
+    {"category": "credential_request", "terms": ["提供支付密码", "发送支付密码", "把验证码发给我", "告诉我验证码"]},
+    {"category": "abuse", "terms": ["傻逼", "操你妈"]},
+    {"category": "illegal_trade", "terms": ["购买毒品", "出售毒品", "购买枪支", "出售枪支"]}
+  ]
+}

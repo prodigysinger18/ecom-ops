@@ -1,0 +1,17 @@
+{
+  "run_id": "00485424-55c2-4dc0-92e8-86d6434d2b18",
+  "metrics": {
+    "vector": {
+      "faithfulness": null,
+      "answer_accuracy": null,
+      "hallucination_rate": null,
+      "reviewed_cases": 0
+    },
+    "hybrid": {
+      "faithfulness": null,
+      "answer_accuracy": null,
+      "hallucination_rate": null,
+      "reviewed_cases": 0
+    }
+  }
+}
